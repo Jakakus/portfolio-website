@@ -5,6 +5,12 @@ import { projects } from '../data';
 import { motion } from 'framer-motion';
 import { use } from 'react';
 
+// Helper function to parse markdown-style bold text
+const convertMarkdownToHtml = (text: string) => {
+  // Replace **text** with <strong>text</strong>
+  return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+};
+
 export default function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter();
   const resolvedParams = use(params);
@@ -51,7 +57,10 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
         <div>
           <div className="aspect-video bg-gray-100 rounded-lg mb-6" />
           <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-          <p className="text-gray-600 mb-6">{project.longDescription}</p>
+          <div 
+            className="prose prose-sm md:prose-base lg:prose-lg max-w-none text-gray-600"
+            dangerouslySetInnerHTML={{ __html: convertMarkdownToHtml(project.longDescription) }}
+          />
           
           <div className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Features</h2>

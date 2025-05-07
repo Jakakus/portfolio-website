@@ -3,6 +3,12 @@
 import { Project } from '@/app/projects/metadata';
 import { useEffect } from 'react';
 
+// Helper function to parse markdown-style bold text
+const convertMarkdownToHtml = (text: string) => {
+  // Replace **text** with <strong>text</strong>
+  return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+};
+
 interface ProjectModalProps {
   project: Project;
   onClose: () => void;
@@ -65,7 +71,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             {/* Project Background */}
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-white mb-3">Project Background</h3>
-              <div className="text-gray-400 whitespace-pre-wrap">{project.longDescription}</div>
+              <div 
+                className="text-gray-400 whitespace-pre-wrap"
+                dangerouslySetInnerHTML={{ __html: convertMarkdownToHtml(project.longDescription) }}
+              />
             </div>
 
             {/* Project Images */}

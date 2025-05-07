@@ -27,17 +27,27 @@ export const projects: Project[] = [
       'Content optimization',
       'Automated reporting'
     ],
-    previewImage: '/images/projects/seo-analytics/keyword_ranking_trends.png',
+    previewImage: 'https://raw.githubusercontent.com/Jakakus/SEO-Analytics-Dashboard/master/images/keyword_ranking_trends.png',
     images: [
       {
-        src: '/images/projects/seo-analytics/keyword_ranking_trends.png',
+        src: 'https://raw.githubusercontent.com/Jakakus/SEO-Analytics-Dashboard/master/images/keyword_ranking_trends.png',
         title: 'Keyword Rankings',
         description: 'Analysis of keyword rankings over time'
       },
       {
-        src: '/images/projects/seo-analytics/traffic_source_breakdown.png',
+        src: 'https://raw.githubusercontent.com/Jakakus/SEO-Analytics-Dashboard/master/images/traffic_source_breakdown.png',
         title: 'Traffic Sources',
         description: 'Breakdown of website traffic by source'
+      },
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/SEO-Analytics-Dashboard/master/images/technical_seo_audit.png',
+        title: 'Technical SEO Audit',
+        description: 'Comprehensive technical SEO audit showing site health metrics'
+      },
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/SEO-Analytics-Dashboard/master/images/competitor_visibility.png',
+        title: 'Competitor Visibility',
+        description: 'Analysis of keyword visibility compared to competitors'
       }
     ],
     githubUrl: 'https://github.com/Jakakus/SEO-Analytics-Dashboard'
@@ -68,17 +78,22 @@ export const projects: Project[] = [
       'ROI tracking',
       'Automated reporting'
     ],
-    previewImage: '/images/projects/email-marketing/ab_test_results.png',
+    previewImage: 'https://raw.githubusercontent.com/Jakakus/Email-Marketing-Analyzer/master/images/ab_test_results.png',
     images: [
       {
-        src: '/images/projects/email-marketing/ab_test_results.png',
+        src: 'https://raw.githubusercontent.com/Jakakus/Email-Marketing-Analyzer/master/images/ab_test_results.png',
         title: 'A/B Test Results',
         description: 'Statistical analysis of A/B test results showing significant improvements'
       },
       {
-        src: '/images/projects/email-marketing/segment_conversions.png',
+        src: 'https://raw.githubusercontent.com/Jakakus/Email-Marketing-Analyzer/master/images/segment_conversions.png',
         title: 'Segment Performance',
         description: 'Performance metrics across different customer segments'
+      },
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/Email-Marketing-Analyzer/master/images/performance_trends.png',
+        title: 'Performance Trends',
+        description: 'Analysis of campaign performance trends over time'
       }
     ],
     githubUrl: 'https://github.com/Jakakus/Email-Marketing-Analyzer'
@@ -109,8 +124,8 @@ export const projects: Project[] = [
       'Custom color schemes',
       'Automated video rendering'
     ],
-    previewImage: '/images/projects/covid-bar-chart.png',
-    videoUrl: '/videos/covid_race_smooth_sliding_win11.mp4',
+    previewImage: 'https://raw.githubusercontent.com/Jakakus/COVID-19-Bar-Chart-Race/master/images/covid-bar-chart.png',
+    videoUrl: 'https://raw.githubusercontent.com/Jakakus/COVID-19-Bar-Chart-Race/master/videos/covid_race_smooth_sliding_win11.mp4',
     githubUrl: 'https://github.com/Jakakus/COVID-19-Bar-Chart-Race'
   },
   {
@@ -151,7 +166,24 @@ export const projects: Project[] = [
       'Synthetic data generation',
       'Automated reporting pipeline'
     ],
-    previewImage: '/images/churn-analysis/random_forest_confusion_matrix.png',
+    previewImage: 'https://raw.githubusercontent.com/Jakakus/Customer-Churn-Prediction/master/images/random_forest_confusion_matrix.png',
+    images: [
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/Customer-Churn-Prediction/master/images/random_forest_confusion_matrix.png',
+        title: 'Random Forest Confusion Matrix',
+        description: 'Model performance visualization showing true vs. predicted values'
+      },
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/Customer-Churn-Prediction/master/images/random_forest_feature_importance.png',
+        title: 'Random Forest Feature Importance',
+        description: 'Ranking of features by their importance in the prediction model'
+      },
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/Customer-Churn-Prediction/master/images/logistic_regression_confusion_matrix.png',
+        title: 'Logistic Regression Confusion Matrix',
+        description: 'Confusion matrix for the logistic regression model'
+      }
+    ],
     githubUrl: 'https://github.com/Jakakus/Customer-Churn-Prediction'
   },
   {
@@ -191,7 +223,29 @@ export const projects: Project[] = [
       'Interactive visualizations',
       'Comprehensive reporting'
     ],
-    previewImage: '/images/covid-impact/scatter_pre_vs_post_revenue.png',
+    previewImage: 'https://raw.githubusercontent.com/Jakakus/COVID-19-Economic-Impact/master/images/scatter_pre_vs_post_revenue.png',
+    images: [
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/COVID-19-Economic-Impact/master/images/scatter_pre_vs_post_revenue.png',
+        title: 'Pre vs Post COVID Revenue',
+        description: 'Scatter plot comparing business revenues before and after COVID-19 impact'
+      },
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/COVID-19-Economic-Impact/master/images/barplot_avg_decline_by_sector.png',
+        title: 'Average Decline by Sector',
+        description: 'Bar plot showing average revenue decline across different business sectors'
+      },
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/COVID-19-Economic-Impact/master/images/boxplot_decline_by_sector.png',
+        title: 'Decline Distribution by Sector',
+        description: 'Box plot showing the distribution of revenue decline across sectors'
+      },
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/COVID-19-Economic-Impact/master/images/hist_decline_percent.png',
+        title: 'Histogram of Decline Percentage',
+        description: 'Distribution of revenue decline percentages across all businesses'
+      }
+    ],
     githubUrl: 'https://github.com/Jakakus/COVID-19-Economic-Impact'
   },
   {
@@ -446,20 +500,20 @@ export const projects: Project[] = [
       'Compensation analysis',
       'Training ROI'
     ],
-    previewImage: '/images/projects/hr-analytics/attrition_by_department.png',
+    previewImage: 'https://raw.githubusercontent.com/Jakakus/HR-Analytics-Platform/master/images/attrition_by_department.png',
     images: [
       {
-        src: '/images/projects/hr-analytics/attrition_by_department.png',
+        src: 'https://raw.githubusercontent.com/Jakakus/HR-Analytics-Platform/master/images/attrition_by_department.png',
         title: 'Attrition Rate by Department',
         description: 'Attrition rates across different departments.'
       },
       {
-        src: '/images/projects/hr-analytics/feature_importance.png',
+        src: 'https://raw.githubusercontent.com/Jakakus/HR-Analytics-Platform/master/images/feature_importance.png',
         title: 'Feature Importance',
         description: 'Feature importance from the Random Forest model.'
       },
       {
-        src: '/images/projects/hr-analytics/confusion_matrix.png',
+        src: 'https://raw.githubusercontent.com/Jakakus/HR-Analytics-Platform/master/images/confusion_matrix.png',
         title: 'Confusion Matrix',
         description: 'Model performance on test data.'
       }
@@ -505,20 +559,20 @@ export const projects: Project[] = [
       'Supply chain visualization',
       'Predictive analytics'
     ],
-    previewImage: '/images/projects/blockchain/supply_chain_dashboard.png',
+    previewImage: 'https://raw.githubusercontent.com/Jakakus/Blockchain-Supply-Chain/master/public/images/supply_chain_dashboard.png',
     images: [
       {
-        src: '/images/projects/blockchain/supply_chain_dashboard.png',
+        src: 'https://raw.githubusercontent.com/Jakakus/Blockchain-Supply-Chain/master/public/images/supply_chain_dashboard.png',
         title: 'Supply Chain Dashboard',
         description: 'Main tracking dashboard showing product journey visualization'
       },
       {
-        src: '/images/projects/blockchain/smart_contract_architecture.png',
+        src: 'https://raw.githubusercontent.com/Jakakus/Blockchain-Supply-Chain/master/public/images/smart_contract_architecture.png',
         title: 'Smart Contract Architecture',
         description: 'Diagram of the multi-layered smart contract system'
       },
       {
-        src: '/images/projects/blockchain/authentication_flow.png',
+        src: 'https://raw.githubusercontent.com/Jakakus/Blockchain-Supply-Chain/master/public/images/authentication_flow.png',
         title: 'Authentication Flow',
         description: 'The zero-knowledge proof authentication process'
       }
