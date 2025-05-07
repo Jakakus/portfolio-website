@@ -276,55 +276,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Portfolio Summary Section */}
-        <section className="py-12 px-4 relative">
-          <div className="container mx-auto max-w-4xl">
-            <div className="bg-background-secondary/30 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-white/5">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 text-center">Portfolio Overview</h2>
-              
-              <div className="space-y-6 text-white/80">
-                <p>
-                  This portfolio showcases a collection of data science and analytics projects demonstrating a range of 
-                  techniques from exploratory data analysis to advanced machine learning. Each project represents 
-                  real-world business challenges solved through data-driven approaches.
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                  <div className="bg-white/5 rounded-xl p-6">
-                    <h3 className="text-xl font-semibold text-white mb-3">Technical Skills Demonstrated</h3>
-                    <ul className="list-disc list-inside space-y-1">
-                      <li>Data preprocessing and feature engineering</li>
-                      <li>Statistical analysis and hypothesis testing</li>
-                      <li>Machine learning model development</li>
-                      <li>Time series forecasting</li>
-                      <li>Data visualization and dashboarding</li>
-                      <li>Natural language processing</li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-white/5 rounded-xl p-6">
-                    <h3 className="text-xl font-semibold text-white mb-3">Business Domains Covered</h3>
-                    <ul className="list-disc list-inside space-y-1">
-                      <li>Marketing analytics and optimization</li>
-                      <li>Customer behavior and segmentation</li>
-                      <li>Predictive maintenance and forecasting</li>
-                      <li>HR analytics and employee retention</li>
-                      <li>Search engine optimization (SEO)</li>
-                      <li>Economic impact analysis</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <p className="mt-6">
-                  These projects highlight my approach to solving data challenges: combining technical rigor with 
-                  business acumen to deliver actionable insights. Each project includes detailed methodology, key findings, 
-                  and business applications to demonstrate not just what was built, but why it matters.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Projects Section with improved gradient transition */}
         <section id="projects" className="relative py-12 px-4" aria-labelledby="projects-heading">
           <div className="absolute inset-x-0 -top-32 h-32 bg-gradient-to-b from-transparent via-background-primary to-background-primary"></div>
@@ -548,20 +499,139 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="about" className="py-20 px-4">
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl font-bold text-white mb-12 text-center">Exploring My Universe</h2>
-            <div className="bg-background-secondary/50 backdrop-blur-sm rounded-lg p-8">
-              <p className="text-white/70 mb-6 leading-relaxed">
-                As a Data & Business Analyst, I navigate through the vast cosmos of information, charting new paths 
-                through data galaxies. Each project represents a unique constellation in my professional universe, 
-                where I transform complex data patterns into clear, actionable insights that guide business decisions.
-              </p>
-              <p className="text-white/70 mb-6 leading-relaxed">
-                My journey through the tech cosmos has equipped me with a unique perspective on data visualization 
-                and analytics. Like a cosmic cartographer, I map out data landscapes and create interactive 
-                visualizations that reveal hidden patterns and insights.
+        {/* About Section - Now merged with Portfolio Overview */}
+        <section id="about" className="py-20 px-4 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-background-primary to-background-secondary/50 opacity-50 pointer-events-none"></div>
+          <div className="container mx-auto max-w-5xl relative z-10">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-white mb-4">Exploring My Data Universe</h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-[#4F9CF9]/90 to-white mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+              {/* Left Column - Interactive Star Map */}
+              <div className="bg-background-secondary/30 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-white/5 transform hover:scale-102 transition-all duration-300 h-full">
+                <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                  <svg className="w-6 h-6 text-[#4F9CF9]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                  </svg>
+                  My Cosmic Journey
+                </h3>
+                
+                <p className="text-white/70 mb-6 leading-relaxed">
+                  As a Data & Business Analyst, I navigate through the vast cosmos of information, charting new paths 
+                  through data galaxies. Each project represents a unique constellation in my professional universe, 
+                  where I transform complex data patterns into clear, actionable insights that guide business decisions.
+                </p>
+                
+                <p className="text-white/70 mb-6 leading-relaxed">
+                  My journey through the tech cosmos has equipped me with a unique perspective on data visualization 
+                  and analytics. Like a cosmic cartographer, I map out data landscapes and create interactive 
+                  visualizations that reveal hidden patterns and insights.
+                </p>
+                
+                <div className="mt-6 flex justify-end">
+                  <a 
+                    href="https://github.com/Jakakus" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[#4F9CF9] hover:text-white transition-colors"
+                  >
+                    <span>Explore my constellation</span>
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              
+              {/* Right Column - Portfolio Skills Map */}
+              <div className="bg-background-secondary/30 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-white/5 transform hover:scale-102 transition-all duration-300 h-full">
+                <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                  <svg className="w-6 h-6 text-[#4F9CF9]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                  </svg>
+                  Portfolio Nebula
+                </h3>
+
+                <div className="space-y-6 text-white/80">
+                  <p className="mb-4">
+                    This portfolio showcases a collection of data science and analytics projects demonstrating a range of 
+                    techniques from exploratory data analysis to advanced machine learning. Each project represents 
+                    real-world business challenges solved through data-driven approaches.
+                  </p>
+
+                  <div className="grid grid-cols-1 gap-6 mt-4">
+                    <div className="bg-white/5 rounded-xl p-5 transform transition-all hover:bg-white/10 hover:translate-y-[-5px] duration-300">
+                      <h4 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
+                        <span className="w-8 h-8 rounded-full bg-[#4F9CF9]/20 flex items-center justify-center text-[#4F9CF9]">
+                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                          </svg>
+                        </span>
+                        Technical Superpowers
+                      </h4>
+                      <ul className="grid grid-cols-2 gap-2 text-sm">
+                        <li className="flex items-center gap-1 text-white/70">
+                          <span className="text-[#4F9CF9]">•</span> Data preprocessing
+                        </li>
+                        <li className="flex items-center gap-1 text-white/70">
+                          <span className="text-[#4F9CF9]">•</span> Statistical analysis
+                        </li>
+                        <li className="flex items-center gap-1 text-white/70">
+                          <span className="text-[#4F9CF9]">•</span> Machine learning
+                        </li>
+                        <li className="flex items-center gap-1 text-white/70">
+                          <span className="text-[#4F9CF9]">•</span> Time series forecasting
+                        </li>
+                        <li className="flex items-center gap-1 text-white/70">
+                          <span className="text-[#4F9CF9]">•</span> Data visualization
+                        </li>
+                        <li className="flex items-center gap-1 text-white/70">
+                          <span className="text-[#4F9CF9]">•</span> NLP techniques
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-white/5 rounded-xl p-5 transform transition-all hover:bg-white/10 hover:translate-y-[-5px] duration-300">
+                      <h4 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
+                        <span className="w-8 h-8 rounded-full bg-[#4F9CF9]/20 flex items-center justify-center text-[#4F9CF9]">
+                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </span>
+                        Business Galaxies Explored
+                      </h4>
+                      <ul className="grid grid-cols-2 gap-2 text-sm">
+                        <li className="flex items-center gap-1 text-white/70">
+                          <span className="text-[#4F9CF9]">•</span> Marketing analytics
+                        </li>
+                        <li className="flex items-center gap-1 text-white/70">
+                          <span className="text-[#4F9CF9]">•</span> Customer segmentation
+                        </li>
+                        <li className="flex items-center gap-1 text-white/70">
+                          <span className="text-[#4F9CF9]">•</span> Predictive maintenance
+                        </li>
+                        <li className="flex items-center gap-1 text-white/70">
+                          <span className="text-[#4F9CF9]">•</span> HR analytics
+                        </li>
+                        <li className="flex items-center gap-1 text-white/70">
+                          <span className="text-[#4F9CF9]">•</span> SEO optimization
+                        </li>
+                        <li className="flex items-center gap-1 text-white/70">
+                          <span className="text-[#4F9CF9]">•</span> Economic impact analysis
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-12 text-center">
+              <p className="text-white/60 italic">
+                &ldquo;Data science, like astronomy, reveals patterns invisible to the naked eye. <br />
+                Both require curiosity, tools, and a willingness to explore the unknown.&rdquo;
               </p>
             </div>
           </div>

@@ -19,9 +19,9 @@ export const theme = {
         dark: '#047857',
       },
       blockchain: {
-        main: '#7C3AED', // Violet
-        light: '#8B5CF6',
-        dark: '#6D28D9',
+        main: '#F7931A', // Bitcoin orange
+        light: '#FBAE42',
+        dark: '#D97D0D',
       },
       data_analysis: {
         main: '#4A90E2',

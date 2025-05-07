@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export type Project = {
   id: string;
   title: string;
-  category: 'data_analysis' | 'visualization' | 'business_intel' | 'predictive';
+  category: 'data_analysis' | 'visualization' | 'business_intel' | 'predictive' | 'blockchain';
   description: string;
   longDescription: string;
   tools: string[];
