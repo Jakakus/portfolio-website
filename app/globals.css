@@ -19,3 +19,66 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Hide scrollbar for modal */
+.modal-content {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Subtle scrollbar for main page */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 4px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-wave {
+  animation: wave 2.5s infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+/* Fallback starry background */
+@keyframes twinkle {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.2; }
+}
+
+/* Base fallback star style */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.3;
+}
