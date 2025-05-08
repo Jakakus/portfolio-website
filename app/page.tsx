@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import BackgroundAnimation from '@/components/BackgroundAnimation';
 import GalaxyScene from '@/components/GalaxyScene';
 import ProjectModal from '@/components/ProjectModal';
-import { Project } from './projects/metadata';
-import { projects } from './projects/data';
-import { theme } from './theme';
+import { Project } from '@/app/projects/metadata';
+import { projects } from '@/app/projects/data';
+import { theme } from '@/app/theme';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 
