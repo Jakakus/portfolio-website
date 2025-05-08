@@ -2,6 +2,54 @@ import { Project } from './metadata';
 
 export const projects: Project[] = [
   {
+    id: 'football-analysis',
+    title: 'Arsenal Striker Analysis',
+    category: 'data_analysis',
+    description: 'Data-driven analysis and visualization to identify the best striker targets for Arsenal FC, using advanced metrics and transfer realism.',
+    longDescription: `This project implements a comprehensive data-driven system to identify and recommend striker targets for Arsenal FC. It combines advanced statistical analysis, custom visualizations, and transfer market logic to filter and rank candidates from top European leagues.
+
+**Key Features:**
+• Evaluates strikers on goals, xG, shot accuracy, assists, and more
+• Excludes unrealistic targets (e.g., Mbappé, Haaland) based on club and transfer likelihood
+• Visualizes performance profiles, distributions, and top-10 rankings
+• Provides clear recommendations and rationale for each candidate
+
+**Business Impact:**
+The analysis provides Arsenal with a shortlist of attainable, high-performing strikers, supporting smarter transfer decisions and long-term squad value.`,
+    tools: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Plotly'],
+    features: [
+      'Advanced striker suitability scoring',
+      'Custom visualizations (radar, scatter, box, bar, pairplot)',
+      'Transfer realism filtering',
+      'Detailed summary tables',
+      'Open-source, reproducible analysis'
+    ],
+    previewImage: 'https://raw.githubusercontent.com/Jakakus/Football-Analysis/master/output/performance_comparison.png',
+    images: [
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/Football-Analysis/master/output/performance_comparison.png',
+        title: 'Performance Metrics Comparison',
+        description: 'Direct comparison of key performance indicators for top striker candidates.'
+      },
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/Football-Analysis/master/output/radar_chart.png',
+        title: 'Radar Chart',
+        description: 'Performance profile comparison of top 5 striker targets.'
+      },
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/Football-Analysis/master/output/goals_xg_scatter.png',
+        title: 'Goals vs xG',
+        description: 'Comparison of actual goals scored versus expected goals (xG).' 
+      },
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/Football-Analysis/master/output/shot_quality_heatmap.png',
+        title: 'Shot Quality Heatmap',
+        description: 'Correlation heatmap of key shooting metrics.'
+      }
+    ],
+    githubUrl: 'https://github.com/Jakakus/Football-Analysis'
+  },
+  {
     id: 'seo-analytics-dashboard',
     title: 'SEO Analytics Dashboard',
     category: 'data_analysis',
@@ -547,10 +595,10 @@ Reduced counterfeiting incidents and improved inventory management efficiency th
       'Supply chain visualization',
       'Predictive analytics'
     ],
-    previewImage: '/Projects/Blockchain-Supply-Chain/screenshots/1.png',
+    previewImage: 'https://raw.githubusercontent.com/Jakakus/Blockchain-Supply-Chain/master/screenshots/2.png',
     images: [
       {
-        src: '/Projects/Blockchain-Supply-Chain/screenshots/1.png',
+        src: 'https://raw.githubusercontent.com/Jakakus/Blockchain-Supply-Chain/master/screenshots/2.png',
         title: 'Supply Chain Dashboard',
         description: 'Main dashboard showing product journey and blockchain-based tracking.'
       }
