@@ -42,6 +42,12 @@ function ErrorBoundary({ children }: { children: React.ReactNode }) {
 const allCategories = Array.from(new Set(projects.map(p => p.category)));
 const allTechnologies = Array.from(new Set(projects.flatMap(p => p.tools)));
 
+// Utility to detect mobile
+function isMobile() {
+  if (typeof window === 'undefined') return false;
+  return window.innerWidth <= 640;
+}
+
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,6 +56,14 @@ export default function Home() {
   const [isOpenCategory, setIsOpenCategory] = useState(false);
   const [isOpenTechnology, setIsOpenTechnology] = useState(false);
   const [showDescription, setShowDescription] = useState(false);
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    setMobile(isMobile());
+    const handleResize = () => setMobile(isMobile());
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -77,11 +91,13 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-background-primary">
       {/* Background Animation */}
-      <div className="fixed inset-0 pointer-events-none">
-        <ErrorBoundary>
-          <BackgroundAnimation />
-        </ErrorBoundary>
-      </div>
+      {!mobile && (
+        <div className="fixed inset-0 pointer-events-none">
+          <ErrorBoundary>
+            <BackgroundAnimation />
+          </ErrorBoundary>
+        </div>
+      )}
 
       {/* Menu Button */}
       <div className="fixed top-4 right-4 z-50">
@@ -265,13 +281,15 @@ export default function Home() {
               </div>
 
               {/* Right Column - Galaxy Scene */}
-              <div className="w-full lg:w-[55%] h-[400px] sm:h-[500px] lg:h-[600px] relative overflow-visible">
-                <div className="absolute inset-0 w-[200%] h-[200%] left-1/2 transform -translate-x-1/2 -translate-y-[25%] scale-100 sm:scale-110">
-                  <ErrorBoundary>
-                    <GalaxyScene className="w-full h-full" />
-                  </ErrorBoundary>
+              {!mobile && (
+                <div className="w-full lg:w-[55%] h-[400px] sm:h-[500px] lg:h-[600px] relative overflow-visible">
+                  <div className="absolute inset-0 w-[200%] h-[200%] left-1/2 transform -translate-x-1/2 -translate-y-[25%] scale-100 sm:scale-110">
+                    <ErrorBoundary>
+                      <GalaxyScene className="w-full h-full" />
+                    </ErrorBoundary>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </section>
