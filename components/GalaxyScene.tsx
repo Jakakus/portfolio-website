@@ -33,7 +33,7 @@ class Galaxy {
       try {
         const testRenderer = new WebGLRenderer();
         testRenderer.dispose();
-      } catch (e) {
+      } catch {
         throw new Error('WebGL is not supported in this browser');
       }
 

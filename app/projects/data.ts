@@ -527,30 +527,18 @@ export const projects: Project[] = [
     description: 'Ethereum-based supply chain tracking system with smart contracts for product authentication and real-time visibility.',
     longDescription: `Developed an Ethereum-based supply chain tracking and management system that brings transparency and trust to product journeys from manufacturer to consumer. This project demonstrates how blockchain technology can solve real business challenges in logistics and product authentication.
 
-  **Blockchain Architecture & Implementation:**
-  • Built on Ethereum with Solidity smart contracts for immutable record-keeping
-  • Implemented ERC-721 non-fungible tokens (NFTs) to represent unique product identities
-  • Created role-based access control for manufacturers, distributors, retailers, and consumers
-  • Designed gas-efficient smart contracts to minimize transaction costs
-  • Integrated real-time event logging using blockchain emitted events
+**Key Features:**
+• Smart contract implementation (Solidity, Ethereum)
+• Product authentication with NFTs
+• Real-time supply chain visualization
+• Role-based access control
+• Predictive analytics for supply chain optimization
 
-  **Technical Components:**
-  • **Smart Contract System:** Multi-layered contract architecture with upgradeable proxy pattern
-  • **Authentication Mechanism:** Zero-knowledge proof implementation for privacy-preserving verification
-  • **Data Visualization:** Interactive supply chain map showing product journey in real-time
-  • **IoT Integration:** Framework for connecting with temperature sensors and RFID readers
-  • **Alert System:** Automated notification system for supply chain exceptions
+**Technical Stack:**
+Solidity, Ethereum, Web3.js, React, Node.js
 
-  **Analytics & Insights:**
-  • **Real-time Dashboards:** Visualization of product journey times, delays, and exceptions
-  • **Predictive Models:** Machine learning algorithms to predict potential delays based on historical blockchain data
-  • **Anomaly Detection:** Statistical models to identify unusual patterns in supply chain data
-
-  **Business Applications:**
-  This system has been particularly effective for high-value products where authenticity verification is critical. The implementation demonstrated a 43% reduction in counterfeiting incidents and a 28% improvement in inventory management efficiency. The blockchain's immutable record-keeping enabled sophisticated analytics that weren't previously possible with traditional supply chain systems.
-
-  **Technical Innovations:**
-  The project pioneered a hybrid on-chain/off-chain data architecture that maintains data integrity while minimizing blockchain transaction costs. This approach allows unlimited scalability while ensuring that critical checkpoints and authentication data remain secured by the Ethereum blockchain.`,
+**Business Impact:**
+Reduced counterfeiting incidents and improved inventory management efficiency through immutable blockchain records and real-time analytics.`,
     tools: ['Solidity', 'Ethereum', 'Web3.js', 'React', 'Node.js'],
     features: [
       'Smart contract implementation',
@@ -559,22 +547,12 @@ export const projects: Project[] = [
       'Supply chain visualization',
       'Predictive analytics'
     ],
-    previewImage: 'https://raw.githubusercontent.com/Jakakus/Blockchain-Supply-Chain/master/public/images/supply_chain_dashboard.png',
+    previewImage: '/Projects/Blockchain-Supply-Chain/screenshots/1.png',
     images: [
       {
-        src: 'https://raw.githubusercontent.com/Jakakus/Blockchain-Supply-Chain/master/public/images/supply_chain_dashboard.png',
+        src: '/Projects/Blockchain-Supply-Chain/screenshots/1.png',
         title: 'Supply Chain Dashboard',
-        description: 'Main tracking dashboard showing product journey visualization'
-      },
-      {
-        src: 'https://raw.githubusercontent.com/Jakakus/Blockchain-Supply-Chain/master/public/images/smart_contract_architecture.png',
-        title: 'Smart Contract Architecture',
-        description: 'Diagram of the multi-layered smart contract system'
-      },
-      {
-        src: 'https://raw.githubusercontent.com/Jakakus/Blockchain-Supply-Chain/master/public/images/authentication_flow.png',
-        title: 'Authentication Flow',
-        description: 'The zero-knowledge proof authentication process'
+        description: 'Main dashboard showing product journey and blockchain-based tracking.'
       }
     ],
     githubUrl: 'https://github.com/Jakakus/Blockchain-Supply-Chain'

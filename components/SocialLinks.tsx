@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 const SocialLinks: React.FC = () => {
   return (
     <div className="flex space-x-4 items-center">

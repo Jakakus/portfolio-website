@@ -472,7 +472,11 @@ export default function Home() {
                   <div 
                     className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     style={{
-                      backgroundImage: `linear-gradient(to bottom right, ${theme.colors.categories[project.category].light}20, ${theme.colors.categories[project.category].dark}40)`
+                      backgroundImage: `linear-gradient(to bottom right, ${
+                        theme.colors.categories[project.category]?.light || theme.colors.primary.light
+                      }20, ${
+                        theme.colors.categories[project.category]?.dark || theme.colors.primary.dark
+                      }40)`
                     }}
                   />
                   <div className="relative flex-1 p-6 flex flex-col">

@@ -78,7 +78,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             </div>
 
             {/* Project Images */}
-            {project.images && (
+            {project.images && project.id !== 'sql-analysis' && project.id !== 'customer-churn-prediction' && project.id !== 'covid-impact-analysis' && (
               <div className="mb-8">
                 <h3 className="text-xl font-semibold text-white mb-3">Analysis & Visualizations</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

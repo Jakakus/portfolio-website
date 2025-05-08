@@ -1,0 +1,24 @@
+# Ignore Projects directory
+Projects/
+Projects/**/*
+
+# Other common excludes
+.git/
+.github/
+.vscode/
+node_modules/
+**/node_modules/
+
+# TypeScript source files that might cause build issues
+app/projects/data.ts
+app/projects/metadata.ts
+app/theme.ts
+
+# Other common excludes
+.next/
+out/
+
+# Exclude unnecessary directories
+.venv/
+cache/
+.vercel/ 
