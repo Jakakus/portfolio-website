@@ -6,7 +6,7 @@ import GalaxyScene from '@/components/GalaxyScene';
 import ProjectModal from '@/components/ProjectModal';
 import { Project } from './metadata';
 import { projects } from './data';
-import { theme } from './theme';
+import { theme } from '@/lib/theme';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 
