@@ -1,5 +1,10 @@
 import { projects } from '../data';
-import ProjectDetailClient from './ProjectDetailClient';
+import dynamic from 'next/dynamic';
+
+const ProjectDetailClient = dynamic(() => import('./ProjectDetailClient'), {
+  loading: () => <div>Loading...</div>,
+  ssr: true
+});
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
