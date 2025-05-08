@@ -173,6 +173,13 @@ The analysis provides Arsenal with a shortlist of attainable, high-performing st
       'Automated video rendering'
     ],
     previewImage: 'https://raw.githubusercontent.com/Jakakus/COVID-19-Bar-Chart-Race/master/images/covid-bar-chart.png',
+    images: [
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/COVID-19-Bar-Chart-Race/master/images/covid-bar-chart.png',
+        title: 'COVID-19 Bar Chart Race',
+        description: 'Animated visualization of COVID-19 cases by country'
+      }
+    ],
     videoUrl: 'https://raw.githubusercontent.com/Jakakus/COVID-19-Bar-Chart-Race/master/videos/covid_race_smooth_sliding_win11.mp4',
     githubUrl: 'https://github.com/Jakakus/COVID-19-Bar-Chart-Race'
   },

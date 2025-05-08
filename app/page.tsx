@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import BackgroundAnimation from '@/components/BackgroundAnimation';
 import GalaxyScene from '@/components/GalaxyScene';
 import ProjectModal from '@/components/ProjectModal';
-import { Project } from './projects/metadata';
-import { projects } from './projects/data';
+import { Project } from './metadata';
+import { projects } from './data';
 import { theme } from './theme';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
@@ -473,9 +473,9 @@ export default function Home() {
                     className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     style={{
                       backgroundImage: `linear-gradient(to bottom right, ${
-                        theme.colors.categories[project.category]?.light || theme.colors.primary.light
+                        theme.colors.categories[project.category as keyof typeof theme.colors.categories]?.light || theme.colors.primary.light
                       }20, ${
-                        theme.colors.categories[project.category]?.dark || theme.colors.primary.dark
+                        theme.colors.categories[project.category as keyof typeof theme.colors.categories]?.dark || theme.colors.primary.dark
                       }40)`
                     }}
                   />

@@ -1,6 +1,6 @@
 'use client';
 
-import { Project } from '@/app/projects/metadata';
+import { Project } from '@/app/metadata';
 import { useEffect } from 'react';
 
 // Helper function to parse markdown-style bold text
@@ -82,7 +82,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
               <div className="mb-8">
                 <h3 className="text-xl font-semibold text-white mb-3">Analysis & Visualizations</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {project.images.map((image, index) => (
+                  {project.images.map((image: { src: string; title: string; description: string }, index: number) => (
                     <div key={index}>
                       <div className="bg-black/30 rounded-lg overflow-hidden">
                         <img 
@@ -212,7 +212,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
               <div className="mb-8">
                 <h3 className="text-xl font-semibold text-white mb-3">Analysis & Visualizations</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {project.images.map((image, index) => (
+                  {project.images.map((image: { src: string; title: string; description: string }, index: number) => (
                     <div key={index}>
                       <div className="bg-black/30 rounded-lg overflow-hidden">
                         <img 
@@ -235,7 +235,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-white mb-3">Key Features</h3>
               <ul className="list-disc list-inside text-gray-400 space-y-2">
-                {project.features.map((feature, index) => (
+                {project.features.map((feature: string, index: number) => (
                   <li key={index}>{feature}</li>
                 ))}
               </ul>
@@ -245,7 +245,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-white mb-3">Technologies Used</h3>
               <div className="flex flex-wrap gap-2">
-                {project.tools.map((tool, index) => (
+                {project.tools.map((tool: string, index: number) => (
                   <span
                     key={index}
                     className="px-3 py-1 rounded-full text-sm bg-white/10 text-white/80"
