@@ -108,7 +108,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                   <div>
                     <div className="bg-black/30 rounded-lg overflow-hidden">
                       <img 
-                        src="/images/churn-analysis/logistic_regression_confusion_matrix.png"
+                        src="https://raw.githubusercontent.com/Jakakus/Customer-Churn-Prediction/master/images/logistic_regression_confusion_matrix.png"
                         alt="Logistic Regression Confusion Matrix"
                         className="w-full"
                       />
@@ -121,7 +121,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                   <div>
                     <div className="bg-black/30 rounded-lg overflow-hidden">
                       <img 
-                        src="/images/churn-analysis/random_forest_confusion_matrix.png"
+                        src="https://raw.githubusercontent.com/Jakakus/Customer-Churn-Prediction/master/images/random_forest_confusion_matrix.png"
                         alt="Random Forest Confusion Matrix"
                         className="w-full"
                       />
@@ -134,7 +134,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                   <div className="md:col-span-2">
                     <div className="bg-black/30 rounded-lg overflow-hidden">
                       <img 
-                        src="/images/churn-analysis/random_forest_feature_importance.png"
+                        src="https://raw.githubusercontent.com/Jakakus/Customer-Churn-Prediction/master/images/random_forest_feature_importance.png"
                         alt="Feature Importance from Random Forest"
                         className="w-full"
                       />
@@ -155,7 +155,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                   <div>
                     <div className="bg-black/30 rounded-lg overflow-hidden">
                       <img 
-                        src="/images/covid-impact/barplot_avg_decline_by_sector.png"
+                        src="https://raw.githubusercontent.com/Jakakus/COVID-19-Economic-Impact/master/images/barplot_avg_decline_by_sector.png"
                         alt="Average Revenue Decline by Sector"
                         className="w-full"
                       />
@@ -168,7 +168,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                   <div>
                     <div className="bg-black/30 rounded-lg overflow-hidden">
                       <img 
-                        src="/images/covid-impact/boxplot_decline_by_sector.png"
+                        src="https://raw.githubusercontent.com/Jakakus/COVID-19-Economic-Impact/master/images/boxplot_decline_by_sector.png"
                         alt="Revenue Decline Distribution by Sector"
                         className="w-full"
                       />
@@ -181,7 +181,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                   <div>
                     <div className="bg-black/30 rounded-lg overflow-hidden">
                       <img 
-                        src="/images/covid-impact/hist_decline_percent.png"
+                        src="https://raw.githubusercontent.com/Jakakus/COVID-19-Economic-Impact/master/images/hist_decline_percent.png"
                         alt="Distribution of Revenue Decline"
                         className="w-full"
                       />
@@ -194,7 +194,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                   <div>
                     <div className="bg-black/30 rounded-lg overflow-hidden">
                       <img 
-                        src="/images/covid-impact/scatter_pre_vs_post_revenue.png"
+                        src="https://raw.githubusercontent.com/Jakakus/COVID-19-Economic-Impact/master/images/scatter_pre_vs_post_revenue.png"
                         alt="Pre vs Post COVID Revenue Comparison"
                         className="w-full"
                       />

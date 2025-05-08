@@ -16,8 +16,6 @@ const nextConfig = {
       },
     ],
   },
-  basePath: '',
-  trailingSlash: true,
 };
 
 module.exports = nextConfig; 
