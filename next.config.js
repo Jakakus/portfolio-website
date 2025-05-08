@@ -18,9 +18,6 @@ const nextConfig = {
   },
   basePath: '',
   trailingSlash: true,
-  experimental: {
-    appDir: true,
-  },
 };
 
 module.exports = nextConfig; 
