@@ -1,14 +1,28 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import BackgroundAnimation from '@/components/BackgroundAnimation';
-import GalaxyScene from '@/components/GalaxyScene';
 import ProjectModal from '@/components/ProjectModal';
 import { Project } from './metadata';
 import { projects } from './data';
 import { theme } from '@/lib/theme';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
+import dynamic from 'next/dynamic';
+
+// Dynamically import heavy components
+const BackgroundAnimationDynamic = dynamic(() => import('@/components/BackgroundAnimation'), {
+  ssr: false,
+  loading: () => (
+    <div className="fixed inset-0 bg-gradient-to-br from-[#000814] to-[#001440] opacity-70" />
+  )
+});
+
+const GalaxySceneDynamic = dynamic(() => import('@/components/GalaxyScene'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full bg-gradient-to-br from-[#00072D] to-[#000C52]" />
+  )
+});
 
 // Add error boundary component
 function ErrorBoundary({ children }: { children: React.ReactNode }) {
@@ -42,6 +56,12 @@ function ErrorBoundary({ children }: { children: React.ReactNode }) {
 const allCategories = Array.from(new Set(projects.map(p => p.category)));
 const allTechnologies = Array.from(new Set(projects.flatMap(p => p.tools)));
 
+// Utility to detect mobile
+function isMobile() {
+  if (typeof window === 'undefined') return false;
+  return window.innerWidth <= 640;
+}
+
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,6 +70,14 @@ export default function Home() {
   const [isOpenCategory, setIsOpenCategory] = useState(false);
   const [isOpenTechnology, setIsOpenTechnology] = useState(false);
   const [showDescription, setShowDescription] = useState(false);
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    setMobile(isMobile());
+    const handleResize = () => setMobile(isMobile());
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -79,7 +107,7 @@ export default function Home() {
       {/* Background Animation */}
       <div className="fixed inset-0 pointer-events-none">
         <ErrorBoundary>
-          <BackgroundAnimation />
+          <BackgroundAnimationDynamic />
         </ErrorBoundary>
       </div>
 
@@ -268,7 +296,7 @@ export default function Home() {
               <div className="w-full lg:w-[55%] h-[400px] sm:h-[500px] lg:h-[600px] relative overflow-visible">
                 <div className="absolute inset-0 w-[200%] h-[200%] left-1/2 transform -translate-x-1/2 -translate-y-[25%] scale-100 sm:scale-110">
                   <ErrorBoundary>
-                    <GalaxyScene className="w-full h-full" />
+                    <GalaxySceneDynamic className="w-full h-full" />
                   </ErrorBoundary>
                 </div>
               </div>
@@ -442,7 +470,7 @@ export default function Home() {
                           src={project.videoUrl}
                           muted
                           loop
-                          preload="metadata"
+                          preload="none"
                           onMouseEnter={(e) => e.currentTarget.play()}
                           onMouseLeave={(e) => {
                             e.currentTarget.pause();
@@ -462,6 +490,9 @@ export default function Home() {
                         width={500}
                         height={300}
                         className="absolute inset-0 w-full h-full object-cover"
+                        loading="lazy"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        quality={mobile ? 75 : 90}
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
