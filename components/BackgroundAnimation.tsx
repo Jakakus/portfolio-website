@@ -15,6 +15,7 @@ class ParticleSystem {
   private isInitialized: boolean = false;
   private scrollIndicator: THREE.Points | null = null;
   private initialY = -15;
+  private mobile: boolean = false;
 
   constructor(container: HTMLElement) {
     this.container = container;
@@ -83,15 +84,14 @@ class ParticleSystem {
 
   private initParticles(): void {
     const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 2000;
+    const particlesCount = this.mobile ? 30 : 100;
     const positions = new Float32Array(particlesCount * 3);
     const colors = new Float32Array(particlesCount * 3);
     const sizes = new Float32Array(particlesCount);
 
     for (let i = 0; i < particlesCount; i++) {
       const i3 = i * 3;
-      // Random position in a sphere
-      const radius = 50 + Math.random() * 30;
+      const radius = this.mobile ? (30 + Math.random() * 20) : (50 + Math.random() * 30);
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.acos(2 * Math.random() - 1);
 
@@ -99,13 +99,12 @@ class ParticleSystem {
       positions[i3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
       positions[i3 + 2] = radius * Math.cos(phi);
 
-      // Soft white color with slight variations
-      const colorBase = 0.5 + Math.random() * 0.2;
+      const colorBase = this.mobile ? 0.5 : (0.5 + Math.random() * 0.2);
       colors[i3] = colorBase;
       colors[i3 + 1] = colorBase;
-      colors[i3 + 2] = colorBase + Math.random() * 0.1;
+      colors[i3 + 2] = colorBase;
 
-      sizes[i] = 1.0 + Math.random();
+      sizes[i] = this.mobile ? 1.0 : (1.0 + Math.random());
     }
 
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
@@ -235,14 +234,19 @@ class ParticleSystem {
 
   private animate = (): void => {
     if (!this.isInitialized || this.isDisposed) return;
+    if (!this.renderer.domElement.parentElement) return;
 
     try {
       if (this.particles?.material instanceof THREE.ShaderMaterial) {
-        this.particles.material.uniforms.time.value = this.clock.getElapsedTime();
-        this.particles.rotation.y += 0.0005;
+        if (!this.mobile) {
+          this.particles.material.uniforms.time.value = this.clock.getElapsedTime();
+        }
+        this.particles.rotation.y += this.mobile ? 0.0002 : 0.0005;
       }
 
-      this.updateScrollIndicator();
+      if (!this.mobile) {
+        this.updateScrollIndicator();
+      }
 
       if (this.renderer && this.scene && this.camera) {
         this.renderer.render(this.scene, this.camera);
@@ -298,6 +302,7 @@ const ThreeDAnimation: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const particleSystemRef = useRef<ParticleSystem | null>(null);
   const [hasError, setHasError] = useState(false);
+  const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -314,6 +319,14 @@ const ThreeDAnimation: React.FC = () => {
         particleSystemRef.current.dispose();
       }
     };
+  }, []);
+
+  useEffect(() => {
+    const isMobile = () => window.innerWidth <= 640;
+    setMobile(isMobile());
+    const handleResize = () => setMobile(isMobile());
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   if (hasError) {

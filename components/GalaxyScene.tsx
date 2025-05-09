@@ -22,11 +22,13 @@ class Galaxy {
   private maxSpeed = 0.005; // Maximum speed when hovered
   private speedLerpFactor = 0.02; // How quickly speed changes
   private isHovered = false;
+  private isMobile: boolean;
 
   constructor(container: HTMLElement) {
     this.container = container;
     this.scene = new THREE.Scene();
     this.clock = new THREE.Clock();
+    this.isMobile = window.innerWidth <= 640;
 
     try {
       // Try to create a WebGL renderer to check support
@@ -47,15 +49,15 @@ class Galaxy {
       this.camera.position.set(25, 10, 25);
       this.camera.lookAt(0, 0, 0);
 
-      // Renderer setup
+      // Renderer setup with mobile optimizations
       this.renderer = new THREE.WebGLRenderer({
-        antialias: true,
+        antialias: !this.isMobile, // Disable antialiasing on mobile
         alpha: true,
-        powerPreference: 'default',
+        powerPreference: 'high-performance',
         failIfMajorPerformanceCaveat: false
       });
       this.renderer.setSize(container.clientWidth, container.clientHeight);
-      this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      this.renderer.setPixelRatio(this.isMobile ? 1 : Math.min(window.devicePixelRatio, 2));
       container.appendChild(this.renderer.domElement);
 
       // Create galaxy
@@ -116,7 +118,7 @@ class Galaxy {
 
   private createGalaxy(): THREE.Points {
     const geometry = new THREE.BufferGeometry();
-    const particleCount = 50000;
+    const particleCount = this.isMobile ? 15000 : 50000; // Reduce particles on mobile
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
 
@@ -178,24 +180,24 @@ class Galaxy {
   };
 
   private animate = () => {
+    if (!this.renderer.domElement.parentElement) return; // Stop animation if element is not in DOM
+    
     const time = this.clock.getElapsedTime();
     
-    // Smooth speed interpolation
-    this.currentSpeed += (this.targetSpeed - this.currentSpeed) * this.speedLerpFactor;
+    // Smooth speed interpolation with reduced calculations on mobile
+    if (!this.isMobile || this.isHovered) {
+      this.currentSpeed += (this.targetSpeed - this.currentSpeed) * this.speedLerpFactor;
+      const rotationLerpFactor = this.isHovered ? 0.001 : 0.0003;
+      this.currentRotation.x += (this.targetRotation.x - this.currentRotation.x) * rotationLerpFactor;
+      this.currentRotation.y += (this.targetRotation.y - this.currentRotation.y) * rotationLerpFactor;
+    } else {
+      // Simpler rotation for mobile
+      this.galaxy.rotation.y += this.baseRotationSpeed;
+    }
     
-    // Extremely slow rotation interpolation
-    const rotationLerpFactor = this.isHovered ? 0.001 : 0.0003;
-    this.currentRotation.x += (this.targetRotation.x - this.currentRotation.x) * rotationLerpFactor;
-    this.currentRotation.y += (this.targetRotation.y - this.currentRotation.y) * rotationLerpFactor;
-    
-    // Apply rotations with dynamic speed
+    // Apply rotations
     this.galaxy.rotation.x = this.currentRotation.x;
     this.galaxy.rotation.y += this.currentSpeed;
-    
-    // Update shader uniforms
-    if (this.galaxy.material instanceof THREE.ShaderMaterial) {
-      this.galaxy.material.uniforms.uTime.value = time;
-    }
 
     this.renderer.render(this.scene, this.camera);
     this.animationId = requestAnimationFrame(this.animate);
@@ -233,6 +235,15 @@ const GalaxyScene: React.FC<GalaxySceneProps> = ({ className = "", style = {} })
   const galaxyRef = useRef<Galaxy | null>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    const isMobile = () => window.innerWidth <= 640;
+    setMobile(isMobile());
+    const handleResize = () => setMobile(isMobile());
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -249,7 +260,7 @@ const GalaxyScene: React.FC<GalaxySceneProps> = ({ className = "", style = {} })
         galaxyRef.current.dispose();
       }
     };
-  }, []);
+  }, [mobile]);
 
   // Fallback background if Three.js fails
   if (hasError) {
