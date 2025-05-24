@@ -2,6 +2,48 @@ import { Project } from './metadata';
 
 export const projects: Project[] = [
   {
+    id: 'github-analytics-platform',
+    title: 'GitHub Analytics Platform',
+    category: 'web_app',
+    description: 'Modern, AI-powered analytics platform for GitHub repositories, users, trending projects, and custom searches. Built with React, TypeScript, Vite, and Gemini AI for actionable developer insights.',
+    longDescription: `A modern analytics platform that provides deep insights into GitHub repositories, users, and trending projects. Features include repository and user analysis, trending discovery, and AI-generated insights using Gemini AI. The platform offers a clean, responsive UI and instant onboarding for actionable developer intelligence.\n\n**Key Features:**\n• Repository and user analytics\n• Trending repository discovery\n• AI-powered search and insights\n• Gemini AI integration for summaries\n• Modern, responsive UI/UX\n\n**Technical Stack:**\nReact, TypeScript, Vite, Gemini AI, Tailwind CSS.\n\n**Business Impact:**\nEnables developers and teams to quickly analyze and discover valuable GitHub projects and contributors, making smarter decisions with AI-driven insights.`,
+    tools: ['React', 'TypeScript', 'Vite', 'Gemini AI', 'Tailwind CSS'],
+    features: [
+      'Repository analysis with detailed metrics',
+      'User profile and contribution analytics',
+      'Trending repositories by language/topic',
+      'AI-powered search and insights',
+      'Gemini AI integration for summaries',
+      'Modern, responsive UI/UX',
+      'Instant onboarding experience'
+    ],
+    previewImage: 'https://raw.githubusercontent.com/Jakakus/github-analytics-platform/main/screenshots/welcome.png',
+    images: [
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/github-analytics-platform/main/screenshots/welcome.png',
+        title: 'Welcome Screen',
+        description: 'Modern welcome screen with instant search for GitHub repositories, users, or trending topics.'
+      },
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/github-analytics-platform/main/screenshots/datareact.png',
+        title: 'Data React Dashboard',
+        description: 'Dashboard view showing data-driven insights and analytics.'
+      },
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/github-analytics-platform/main/screenshots/microsoftvscode.png',
+        title: 'VSCode Repository Overview',
+        description: 'Overview analytics for the Microsoft VSCode repository.'
+      },
+      {
+        src: 'https://raw.githubusercontent.com/Jakakus/github-analytics-platform/main/screenshots/microsoftvscodeanalysis.png',
+        title: 'VSCode Deep Analysis',
+        description: 'In-depth analysis and AI insights for the Microsoft VSCode repository.'
+      }
+    ],
+    githubUrl: 'https://github.com/Jakakus/github-analytics-platform',
+    demoUrl: 'https://project-five-nu-56.vercel.app/'
+  },
+  {
     id: 'football-analysis',
     title: 'Arsenal Striker Analysis',
     category: 'data_analysis',
